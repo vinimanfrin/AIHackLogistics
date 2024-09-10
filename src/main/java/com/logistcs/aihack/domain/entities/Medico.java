@@ -20,7 +20,10 @@ public class Medico {
     private Long id;
     private String name;
     private String crm;
+
+    @Enumerated(EnumType.ORDINAL)
     private EspecialidadeMedico especialidade;
+
     private String telefone;
 
     @OneToOne(cascade = CascadeType.ALL)
