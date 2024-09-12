@@ -1,13 +1,10 @@
-.body-index {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: white;
-}
-
 .container-index {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.body-index {
+    align-items: center;
+    height: 100vh;
 }

@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
 /*Component Button-Blue*/
 .blue-button {
     display: flex;
