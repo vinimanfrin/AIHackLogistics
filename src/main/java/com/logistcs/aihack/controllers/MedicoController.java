@@ -7,10 +7,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/medicos")
@@ -18,6 +15,12 @@ public class MedicoController {
 
     @Autowired
     private MedicoService service;
+
+    @GetMapping
+    public String getMedicos(Model model){
+        model.addAttribute("medicos",service.findAll());
+        return "medicos-list";
+    }
 
     @GetMapping("/create")
     public String getFormularioDeCriacao(Model model){
@@ -29,6 +32,12 @@ public class MedicoController {
     @PostMapping
     public String newMedico(@ModelAttribute @Valid MedicoCreateDTO medicoCreateDTO){
         service.newMedico(medicoCreateDTO);
-        return "redirect:/";
+        return "redirect:/medicos";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable Long id){
+        service.delete(id);
+        return "redirect:/medicos";
     }
 }

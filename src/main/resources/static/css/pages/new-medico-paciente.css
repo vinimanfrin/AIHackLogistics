@@ -6,7 +6,7 @@
     background-color: #f0f4f8;
 }
 
-form {
+.form-new-medico-paciente {
     display: flex;
     flex-direction: column;
     width: 600px;
@@ -17,7 +17,7 @@ form {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.titulo {
     text-align: center;
     color: #333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -35,14 +35,14 @@ h2 {
     flex: 1;
 }
 
-label {
+.label-new-medico-paciente {
     font-weight: bold;
     margin-bottom: 5px;
     font-size: 14px;
     color: #4a5568;
 }
 
-input, select {
+.input-new-medico-paciente {
     padding: 10px;
     border-radius: 4px;
     border: 1px solid #cbd5e0;
@@ -57,7 +57,7 @@ input:focus, select:focus {
     outline: none;
 }
 
-button {
+.button-new-medico-paciente {
     display: flex;
     justify-content: center;
     padding: 12px;
