@@ -27,11 +27,12 @@ public class Paciente {
     public Paciente() {
     }
 
-    public Paciente(Long id, String telefone, String nome, LocalDate dataNascimento) {
+    public Paciente(Long id, String telefone, String nome, LocalDate dataNascimento, Endereco endereco) {
         this.id = id;
         this.telefone = telefone;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
     }
 
     public Long getId() {
