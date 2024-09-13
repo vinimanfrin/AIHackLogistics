@@ -31,12 +31,13 @@ public class Medico {
     public Medico() {
     }
 
-    public Medico(String telefone, EspecialidadeMedico especialidade, String crm, String nome, Long id) {
-        this.telefone = telefone;
-        this.especialidade = especialidade;
-        this.crm = crm;
-        this.nome = nome;
+    public Medico(Long id, String nome, String crm, EspecialidadeMedico especialidade, String telefone, Endereco endereco) {
         this.id = id;
+        this.nome = nome;
+        this.crm = crm;
+        this.especialidade = especialidade;
+        this.telefone = telefone;
+        this.endereco = endereco;
     }
 
     public Long getId() {

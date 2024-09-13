@@ -3,6 +3,7 @@ package com.logistcs.aihack.controllers;
 import com.logistcs.aihack.domain.enums.EspecialidadeMedico;
 import com.logistcs.aihack.dtos.MedicoCreateDTO;
 import com.logistcs.aihack.services.MedicoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +27,7 @@ public class MedicoController {
     }
 
     @PostMapping
-    public String newMedico(@ModelAttribute MedicoCreateDTO medicoCreateDTO){
+    public String newMedico(@ModelAttribute @Valid MedicoCreateDTO medicoCreateDTO){
         service.newMedico(medicoCreateDTO);
         return "redirect:/";
     }

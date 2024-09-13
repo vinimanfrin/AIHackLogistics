@@ -1,5 +1,6 @@
 package com.logistcs.aihack.dtos;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -17,14 +18,18 @@ public class MedicoCreateDTO {
     @NotBlank
     private String telefone;
 
+    @Valid
+    private EnderecoCreateDTO endereco;
+
     public MedicoCreateDTO() {
     }
 
-    public MedicoCreateDTO(String nome, String crm, Integer especialidade, String telefone) {
+    public MedicoCreateDTO(String nome, String crm, Integer especialidade, String telefone, EnderecoCreateDTO endereco) {
         this.nome = nome;
         this.crm = crm;
         this.especialidade = especialidade;
         this.telefone = telefone;
+        this.endereco = endereco;
     }
 
     public String getNome() {
@@ -57,5 +62,13 @@ public class MedicoCreateDTO {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public EnderecoCreateDTO getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(EnderecoCreateDTO endereco) {
+        this.endereco = endereco;
     }
 }
