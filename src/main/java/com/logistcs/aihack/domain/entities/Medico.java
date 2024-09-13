@@ -13,7 +13,7 @@ public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String nome;
     private String crm;
 
     @Enumerated(EnumType.ORDINAL)
@@ -31,11 +31,11 @@ public class Medico {
     public Medico() {
     }
 
-    public Medico(String telefone, EspecialidadeMedico especialidade, String crm, String name, Long id) {
+    public Medico(String telefone, EspecialidadeMedico especialidade, String crm, String nome, Long id) {
         this.telefone = telefone;
         this.especialidade = especialidade;
         this.crm = crm;
-        this.name = name;
+        this.nome = nome;
         this.id = id;
     }
 
@@ -47,12 +47,12 @@ public class Medico {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getCrm() {
@@ -100,11 +100,11 @@ public class Medico {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Medico medico = (Medico) o;
-        return Objects.equals(id, medico.id) && Objects.equals(name, medico.name) && Objects.equals(crm, medico.crm) && especialidade == medico.especialidade && Objects.equals(telefone, medico.telefone) && Objects.equals(endereco, medico.endereco) && Objects.equals(consultas, medico.consultas);
+        return Objects.equals(id, medico.id) && Objects.equals(nome, medico.nome) && Objects.equals(crm, medico.crm) && especialidade == medico.especialidade && Objects.equals(telefone, medico.telefone) && Objects.equals(endereco, medico.endereco) && Objects.equals(consultas, medico.consultas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, crm, especialidade, telefone, endereco, consultas);
+        return Objects.hash(id, nome, crm, especialidade, telefone, endereco, consultas);
     }
 }

@@ -1,28 +1,22 @@
 package com.logistcs.aihack.domain.enums;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 public enum EspecialidadeMedico {
-
     CARDIOLOGISTA(0),
     ORTOPEDISTA(1);
 
-    private final int value;
+    private Integer value;
 
-    EspecialidadeMedico(int value){
+    EspecialidadeMedico(Integer value){
         this.value = value;
     }
 
-    @JsonValue
-    public int getValue(){
+    public Integer getValue(){
         return value;
     }
 
-    @JsonCreator
-    public static EspecialidadeMedico especialidadeMedico(int value){
+    public static EspecialidadeMedico especialidadeMedico(Integer value){
         for (EspecialidadeMedico especialidade : values()){
-            if (especialidade.value == value){
+            if (especialidade.getValue().equals(value)){
                 return especialidade;
             }
         }

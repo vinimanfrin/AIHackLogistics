@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Médico</title>
+</head>
+<body>
+<form method="POST" th:action="@{/medicos}" th:object="${medicoCreateDTO}">
+
+    <label for="nome">Nome</label>
+    <input type="text" th:field="*{nome}" name="nome" id="nome">
+
+    <label for="especialidade">Especialidade</label>
+    <select id="especialidade" name="especialidade" th:field="*{especialidade}">
+        <option value="" disabled selected>Escolha uma especialidade</option>
+        <option th:each="especialidade : ${especialidades}" th:value="${especialidade.getValue()}" th:text="${especialidade}"></option>
+    </select>
+
+    <label for="crm">CRM</label>
+    <input type="text" th:field="*{crm}" name="crm" id="crm">
+
+    <label for="telefone">Telefone</label>
+    <input type="text" th:field="*{telefone}" name="telefone" id="telefone">
+
+    <button type="submit">Salvar</button>
+</form>
+</body>
+</html>
