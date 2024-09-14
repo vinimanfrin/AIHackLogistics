@@ -19,7 +19,7 @@
     <div th:each="consulta : ${consultas}" class="consultas">
         <h3 th:text="'Data e Hora: ' + ${consulta.getDataHora()}"></h3>
         <h3 th:text="'Status: ' + ${consulta.getStatus()}"></h3>
-        <h3 th:text="'Medico: ' + ${consulta.getMedico().getName()}"></h3>
+        <h3 th:text="'Medico: ' + ${consulta.getMedico().getNome()}"></h3>
         <h3 th:text="'Paciente: ' + ${consulta.getPaciente().getNome()}"></h3>
     </div>
 </div>
