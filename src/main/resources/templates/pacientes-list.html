@@ -30,6 +30,10 @@
                     <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este Paciente?');" class="red-button">Excluir</button>
                 </form>
             </div>
+
+            <div>
+                <a th:href="@{/pacientes/edit/{id}(id=${paciente.getId()})}" class="alternative-button">Editar</a>
+            </div>
         </div>
     </div>
 </div>

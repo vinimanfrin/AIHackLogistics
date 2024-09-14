@@ -1,6 +1,7 @@
 package com.logistcs.aihack.controllers;
 
 import com.logistcs.aihack.dtos.PacienteCreateDTO;
+import com.logistcs.aihack.dtos.PacienteUpdateDTO;
 import com.logistcs.aihack.services.PacienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,19 @@ public class PacienteController {
     @PostMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         service.delete(id);
+        return "redirect:/pacientes";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String getFormEdicao(Model model, @PathVariable Long id){
+        PacienteUpdateDTO pacienteUpdateDTO = service.preparaUpdateDto(id);
+        model.addAttribute("pacienteUpdateDTO", pacienteUpdateDTO);
+        return "update-pacientes";
+    }
+
+    @PostMapping("/edit")
+    public String update(@ModelAttribute @Valid PacienteUpdateDTO pacienteUpdateDTO){
+        service.update(pacienteUpdateDTO);
         return "redirect:/pacientes";
     }
 }
