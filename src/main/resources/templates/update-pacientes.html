@@ -30,37 +30,37 @@
         <!-- Endereço -->
         <div class="form-row">
             <div class="form-group">
+                <label for="cep" class="label-new-medico-paciente">Cep</label>
+                <input type="text" th:field="*{endereco.cep}" name="cep" id="cep" class="input-new-medico-paciente">
+            </div>
+
+            <div class="form-group">
                 <label for="numero" class="label-new-medico-paciente">Número Residencial</label>
                 <input type="text" th:field="*{endereco.numero}" name="numero" id="numero" class="input-new-medico-paciente">
             </div>
+        </div>
 
+        <div class="form-row">
             <div class="form-group">
                 <label for="rua" class="label-new-medico-paciente">Rua</label>
                 <input type="text" th:field="*{endereco.rua}" name="rua" id="rua" class="input-new-medico-paciente">
             </div>
-        </div>
 
-        <div class="form-row">
             <div class="form-group">
                 <label for="bairro" class="label-new-medico-paciente">Bairro</label>
                 <input type="text" th:field="*{endereco.bairro}" name="bairro" id="bairro" class="input-new-medico-paciente">
             </div>
-
-            <div class="form-group">
-                <label for="cidade" class="label-new-medico-paciente">Cidade</label>
-                <input type="text" th:field="*{endereco.cidade}" name="cidade" id="cidade" class="input-new-medico-paciente">
-            </div>
         </div>
 
         <div class="form-row">
             <div class="form-group">
-                <label for="estado" class="label-new-medico-paciente">Estado</label>
-                <input type="text" th:field="*{endereco.estado}" name="estado" id="estado" class="input-new-medico-paciente">
+                <label for="cidade" class="label-new-medico-paciente">Cidade</label>
+                <input type="text" th:field="*{endereco.cidade}" name="cidade" id="cidade" class="input-new-medico-paciente">
             </div>
 
             <div class="form-group">
-                <label for="cep" class="label-new-medico-paciente">Cep</label>
-                <input type="text" th:field="*{endereco.cep}" name="cep" id="cep" class="input-new-medico-paciente">
+                <label for="estado" class="label-new-medico-paciente">Estado</label>
+                <input type="text" th:field="*{endereco.estado}" name="estado" id="estado" class="input-new-medico-paciente">
             </div>
         </div>
 
