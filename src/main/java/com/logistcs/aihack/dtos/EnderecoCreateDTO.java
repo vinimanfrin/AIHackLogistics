@@ -1,5 +1,6 @@
 package com.logistcs.aihack.dtos;
 
+import com.logistcs.aihack.domain.entities.Endereco;
 import jakarta.validation.constraints.NotBlank;
 
 public class EnderecoCreateDTO {
@@ -36,6 +37,16 @@ public class EnderecoCreateDTO {
         this.estado = estado;
         this.cep = cep;
         this.complemento = complemento;
+    }
+
+    public EnderecoCreateDTO(Endereco endereco) {
+        this.numero = endereco.getNumero();
+        this.rua = endereco.getRua();
+        this.bairro = endereco.getBairro();
+        this.cidade = endereco.getCidade();
+        this.estado = endereco.getEstado();
+        this.cep = endereco.getCep();
+        this.complemento = endereco.getComplemento();
     }
 
     public String getNumero() {

@@ -15,4 +15,15 @@ public class EnderecoService {
     public Endereco newEndereco(EnderecoCreateDTO enderecoCreateDTO){
         return repository.save(new Endereco(enderecoCreateDTO));
     }
+
+    public void update(Endereco endereco, EnderecoCreateDTO enderecoDto) {
+        endereco.setNumero(enderecoDto.getNumero());
+        endereco.setRua(enderecoDto.getRua());
+        endereco.setBairro(enderecoDto.getBairro());
+        endereco.setCidade(enderecoDto.getCidade());
+        endereco.setEstado(enderecoDto.getEstado());
+        endereco.setCep(enderecoDto.getCep());
+        endereco.setComplemento(enderecoDto.getComplemento());
+        repository.save(endereco);
+    }
 }

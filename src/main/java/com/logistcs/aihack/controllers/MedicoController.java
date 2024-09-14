@@ -2,6 +2,7 @@ package com.logistcs.aihack.controllers;
 
 import com.logistcs.aihack.domain.enums.EspecialidadeMedico;
 import com.logistcs.aihack.dtos.MedicoCreateDTO;
+import com.logistcs.aihack.dtos.MedicoUpdateDTO;
 import com.logistcs.aihack.services.MedicoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class MedicoController {
     }
 
     @GetMapping("/create")
-    public String getFormularioDeCriacao(Model model){
+    public String getFormCriacao(Model model){
         model.addAttribute("especialidades", EspecialidadeMedico.values());
         model.addAttribute("medicoCreateDTO", new MedicoCreateDTO());
         return "new-medico";
@@ -38,6 +39,20 @@ public class MedicoController {
     @PostMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         service.delete(id);
+        return "redirect:/medicos";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String getFormEdicao(Model model, @PathVariable Long id){
+        MedicoUpdateDTO medicoUpdateDTO = service.preparaUpdateDto(id);
+        model.addAttribute("medicoUpdateDTO", medicoUpdateDTO);
+        model.addAttribute("especialidades",EspecialidadeMedico.values());
+        return "update-medico";
+    }
+
+    @PostMapping("/edit")
+    public String update(@ModelAttribute @Valid MedicoUpdateDTO medicoUpdateDTO){
+        service.update(medicoUpdateDTO);
         return "redirect:/medicos";
     }
 }

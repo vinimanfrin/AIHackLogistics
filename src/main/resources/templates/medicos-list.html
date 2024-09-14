@@ -31,6 +31,10 @@
                     <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este médico?');" class="red-button">Excluir</button>
                 </form>
             </div>
+
+            <div>
+                <a th:href="@{/medicos/edit/{id}(id=${medico.getId()})}" class="alternative-button">Editar</a>
+            </div>
         </div>
     </div>
 </div>

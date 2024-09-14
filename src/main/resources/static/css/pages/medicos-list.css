@@ -2,6 +2,12 @@
     width: 75vh;
 }
 
+.acoes-medico{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .cabecalho {
     display: flex;
     justify-content: space-between;
