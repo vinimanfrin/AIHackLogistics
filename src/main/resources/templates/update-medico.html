@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Update Médico</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script th:src="@{/js/endereco.js}"></script>
 </head>
 <body class="body-new-medico">
 <div class="container-new">
@@ -51,24 +52,24 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="rua" class="label-new-medico-paciente">Rua</label>
-                <input type="text" th:field="*{endereco.rua}" name="rua" id="rua" class="input-new-medico-paciente">
+                <input type="text" th:field="*{endereco.rua}" name="rua" id="rua" class="input-new-medico-paciente" readonly>
             </div>
 
             <div class="form-group">
                 <label for="bairro" class="label-new-medico-paciente">Bairro</label>
-                <input type="text" th:field="*{endereco.bairro}" name="bairro" id="bairro" class="input-new-medico-paciente">
+                <input type="text" th:field="*{endereco.bairro}" name="bairro" id="bairro" class="input-new-medico-paciente" readonly>
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group">
                 <label for="cidade" class="label-new-medico-paciente">Cidade</label>
-                <input type="text" th:field="*{endereco.cidade}" name="cidade" id="cidade" class="input-new-medico-paciente">
+                <input type="text" th:field="*{endereco.cidade}" name="cidade" id="cidade" class="input-new-medico-paciente" readonly>
             </div>
 
             <div class="form-group">
                 <label for="estado" class="label-new-medico-paciente">Estado</label>
-                <input type="text" th:field="*{endereco.estado}" name="estado" id="estado" class="input-new-medico-paciente">
+                <input type="text" th:field="*{endereco.estado}" name="estado" id="estado" class="input-new-medico-paciente" readonly>
             </div>
         </div>
 
@@ -82,6 +83,11 @@
         <button type="submit" class="blue-button button-new-medico-paciente">Salvar</button>
     </form>
 </div>
-
+<script>
+    // Inicializa o handler de CEP
+    window.onload = function() {
+        inicializarCepHandler();
+    };
+</script>
 </body>
 </html>
