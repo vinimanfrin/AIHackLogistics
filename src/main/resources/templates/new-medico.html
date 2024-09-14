@@ -16,6 +16,7 @@
             <div class="form-group">
                 <label for="nome" class="label-new-medico-paciente">Nome</label>
                 <input type="text" th:field="*{nome}" name="nome" id="nome" class="input-new-medico-paciente">
+                <div class="error-message" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
             </div>
 
             <div class="form-group">
@@ -24,6 +25,7 @@
                     <option value="" disabled selected>Escolha uma especialidade</option>
                     <option th:each="especialidade : ${especialidades}" th:value="${especialidade.getValue()}" th:text="${especialidade}"></option>
                 </select>
+                <div class="error-message" th:if="${#fields.hasErrors('especialidade')}" th:errors="*{especialidade}"></div>
             </div>
         </div>
 
@@ -31,11 +33,13 @@
             <div class="form-group">
                 <label for="crm" class="label-new-medico-paciente">CRM</label>
                 <input type="text" th:field="*{crm}" name="crm" id="crm" class="input-new-medico-paciente">
+                <div class="error-message" th:if="${#fields.hasErrors('crm')}" th:errors="*{crm}"></div>
             </div>
 
             <div class="form-group">
                 <label for="telefone" class="label-new-medico-paciente">Telefone</label>
                 <input type="text" th:field="*{telefone}" name="telefone" id="telefone" class="input-new-medico-paciente">
+                <div class="error-message" th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}"></div>
             </div>
         </div>
 
@@ -49,6 +53,7 @@
             <div class="form-group">
                 <label for="numero" class="label-new-medico-paciente">Número Residencial</label>
                 <input type="text" th:field="*{endereco.numero}" name="numero" id="numero" class="input-new-medico-paciente">
+                <div class="error-message" th:if="${#fields.hasErrors('endereco.numero')}" th:errors="*{endereco.numero}"></div>
             </div>
         </div>
 

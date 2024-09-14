@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -31,7 +32,11 @@ public class MedicoController {
     }
 
     @PostMapping
-    public String newMedico(@ModelAttribute @Valid MedicoCreateDTO medicoCreateDTO){
+    public String newMedico(@ModelAttribute @Valid MedicoCreateDTO medicoCreateDTO, BindingResult bindingResult, Model model){
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("especialidades", EspecialidadeMedico.values());
+            return "new-medico";
+        }
         service.newMedico(medicoCreateDTO);
         return "redirect:/medicos";
     }
@@ -51,7 +56,11 @@ public class MedicoController {
     }
 
     @PostMapping("/edit")
-    public String update(@ModelAttribute @Valid MedicoUpdateDTO medicoUpdateDTO){
+    public String update(@ModelAttribute @Valid MedicoUpdateDTO medicoUpdateDTO,BindingResult bindingResult, Model model){
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("especialidades", EspecialidadeMedico.values());
+            return "update-medico";
+        }
         service.update(medicoUpdateDTO);
         return "redirect:/medicos";
     }

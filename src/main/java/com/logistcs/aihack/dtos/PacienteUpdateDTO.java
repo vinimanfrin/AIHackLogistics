@@ -1,5 +1,6 @@
 package com.logistcs.aihack.dtos;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -14,6 +15,7 @@ public class PacienteUpdateDTO {
     @NotBlank
     private String nome;
 
+    @Valid
     private EnderecoCreateDTO endereco;
 
     public PacienteUpdateDTO() {
