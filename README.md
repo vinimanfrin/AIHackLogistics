@@ -1,5 +1,9 @@
 # 🏥 AI Hack Logistcs
 
+## Vídeo explicativo no YouTube
+https://youtu.be/kPag7fLlaUE?si=3t0n8iHo70Wk-91v
+
+
 ## Descrição
 
 Este é um sistema de gerenciamento médico desenvolvido com *Java 17, utilizando o framework **Spring Boot* e *Thymeleaf* para a camada de visualização. O sistema tem como objetivo gerenciar *médicos*,*pacientes* e *consultas*. 
