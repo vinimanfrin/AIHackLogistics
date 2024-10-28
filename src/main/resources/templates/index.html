@@ -26,7 +26,10 @@
         <img th:src="@{/img/exame.png}" alt="imagem ilustrativa de exames" width="20" height="20">
         <p>Pacientes</p>
     </a>
-    </a>
+
+    <form th:action="@{/logout}" method="post" style="display:inline;">
+        <button type="submit" onclick="return confirm('Tem certeza que deseja sair?');" class="logout-button">Sair</button>
+    </form>
 </div>
 </body>
 </html>
