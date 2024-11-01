@@ -5,7 +5,6 @@ import com.logistcs.aihack.domain.enums.EspecialidadeMedico;
 import com.logistcs.aihack.dtos.MedicoCreateDTO;
 import com.logistcs.aihack.dtos.MedicoUpdateDTO;
 import com.logistcs.aihack.services.MedicoService;
-import com.logistcs.aihack.services.NotificadorMedico;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,9 +18,6 @@ public class MedicoController {
 
     @Autowired
     private MedicoService service;
-
-    @Autowired
-    private NotificadorMedico notificadorMedico;
 
     @GetMapping
     public String getMedicos(Model model){
@@ -42,7 +38,7 @@ public class MedicoController {
             model.addAttribute("especialidades", EspecialidadeMedico.values());
             return "new-medico";
         }
-        notificadorMedico.integrar(service.newMedico(medicoCreateDTO));
+        service.newMedico(medicoCreateDTO);
         return "redirect:/medicos";
     }
 

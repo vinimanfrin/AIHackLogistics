@@ -1,5 +1,6 @@
 package com.logistcs.aihack.services;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.logistcs.aihack.domain.entities.Endereco;
 import com.logistcs.aihack.domain.entities.Medico;
 import com.logistcs.aihack.domain.enums.EspecialidadeMedico;
@@ -23,13 +24,17 @@ public class MedicoService {
     @Autowired
     private EnderecoService enderecoService;
 
+    @Autowired
+    private NotificadorMedico notificadorMedico;
+
 
     @Transactional
-    public Medico newMedico(MedicoCreateDTO medicoCreateDTO){
+    public Medico newMedico(MedicoCreateDTO medicoCreateDTO) throws JsonProcessingException {
         Endereco endereco = enderecoService.newEndereco(medicoCreateDTO.getEndereco());
         Medico medico = new Medico(null, medicoCreateDTO.getNome(), medicoCreateDTO.getCrm(), EspecialidadeMedico.especialidadeMedico(medicoCreateDTO.getEspecialidade()),
                 medicoCreateDTO.getTelefone(), endereco);
-
+        medico = repository.save(medico);
+        notificadorMedico.integrar(medico);
         return repository.save(medico);
     }
 
