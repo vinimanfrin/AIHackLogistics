@@ -49,7 +49,7 @@ public class SecurityConfig {
                     httpForm.defaultSuccessUrl("/",true);
                 })
                 .authorizeHttpRequests(registry -> {
-                    registry.requestMatchers("/auth/signup","/css/**", "/js/**").permitAll();
+                    registry.requestMatchers("/auth/signup","/css/**", "/js/**","/chat").permitAll();
                     registry.anyRequest().authenticated();
                 })
                 .build();
