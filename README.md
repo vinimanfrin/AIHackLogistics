@@ -1,8 +1,15 @@
 # 🏥 AI Hack Logistcs
 
+## Integrantes:
+
+- 552293 - Vinicius Monteiro Manfrin
+- 552302 - Samara De Oliveira Moreira
+- 551261 - Giovanni Sguizzardi Conde
+- 98057 - Nicolas Eiti Inohue
+- 99841 - Marcel Prado Soddano
+
 ## Vídeo explicativo no YouTube
 https://youtu.be/CYTRZDvArG4
-
 
 ## Descrição
 
