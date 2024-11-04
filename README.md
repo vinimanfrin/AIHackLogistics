@@ -1,7 +1,7 @@
 # 🏥 AI Hack Logistcs
 
 ## Vídeo explicativo no YouTube
-https://youtu.be/kPag7fLlaUE?si=3t0n8iHo70Wk-91v
+https://youtu.be/CYTRZDvArG4
 
 
 ## Descrição
@@ -14,12 +14,14 @@ A aplicação foi implementada para fins acadêmicos, e utiliza um banco de dado
 
 - *CRUD de Médicos*: Cadastro, edição, listagem e exclusão de médicos.
 - *CRUD de Pacientes*: Cadastro, edição, listagem e exclusão de pacientes.
+- Visualização de Consultas
 
 ## Tecnologias Utilizadas
 - *Java 17*
 - *Spring Boot*
 - *Thymeleaf* (para renderização de páginas HTML)
 - *Banco de dados H2* (em memória)
+- Javascript
 
 ## Como Executar
 
@@ -27,6 +29,7 @@ A aplicação foi implementada para fins acadêmicos, e utiliza um banco de dado
 
 - Java 17 instalado
 - Maven para gerenciar as dependências
+- Docker
 
 ### Passos para execução
 
@@ -43,11 +46,15 @@ A aplicação foi implementada para fins acadêmicos, e utiliza um banco de dado
     ```bash
     mvn clean install
 
-4. Inicie a aplicação:
+4. Faça o clone do worker do RabbitMQ e o configure de acordo com as instruções em:
+    ```bash
+    https://github.com/vinimanfrin/AIHackLogisticsWorker
+
+5. Inicie a aplicação:
     ```bash
     mvn spring-boot:run
 
-5. Acesse a aplicação e navegue entre as páginas no seu navegador em:
+6. Acesse a aplicação e navegue entre as páginas no seu navegador em:
     ```bash
     http://localhost:8080
 
